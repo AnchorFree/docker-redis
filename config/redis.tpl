@@ -1,6 +1,6 @@
 protected-mode no
 port 6379
-tcp-backlog 65536
+bind 0.0.0.0
 timeout 0
 tcp-keepalive 300
 daemonize no
