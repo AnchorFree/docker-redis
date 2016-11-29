@@ -26,8 +26,8 @@ requirepass {{ REDIS_PASSWORD }}
 maxclients 10000
 
 maxmemory {{ REDIS_MAX_MEMORY }}
-maxmemory-policy volatile-lru
-maxmemory-samples 5
+maxmemory-policy allkeys-lru
+maxmemory-samples 3
 
 appendonly no
 
