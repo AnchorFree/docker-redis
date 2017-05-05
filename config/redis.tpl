@@ -5,7 +5,7 @@ timeout 0
 tcp-keepalive 300
 daemonize no
 supervised no
-loglevel warning
+loglevel notice
 logfile ""
 databases 2
 
@@ -27,7 +27,7 @@ maxclients 10000
 
 maxmemory {{ REDIS_MAX_MEMORY }}
 maxmemory-policy allkeys-lru
-maxmemory-samples 5
+maxmemory-samples 3
 
 appendonly no
 
@@ -38,18 +38,17 @@ latency-monitor-threshold 0
 
 notify-keyspace-events ""
 
-hash-max-zipmap-entries 512
-hash-max-zipmap-value 64
-list-max-ziplist-entries 512
-list-max-ziplist-value 64
+hash-max-ziplist-entries 512
+hash-max-ziplist-value 64
+list-max-ziplist-size -2
+list-compress-depth 0
+set-max-intset-entries 512
 zset-max-ziplist-entries 128
 zset-max-ziplist-value 64
-set-max-intset-entries 512
-list-compress-depth 0
 hll-sparse-max-bytes 3000
 activerehashing yes
 client-output-buffer-limit normal 0 0 0
 client-output-buffer-limit slave 256mb 64mb 60
-client-output-buffer-limit pubsub 256mb 8mb 60
+client-output-buffer-limit pubsub 128mb 64mb 60
 hz 10
 aof-rewrite-incremental-fsync yes
