@@ -13,7 +13,7 @@ This container provide Redis container for logging solution. Redis is using like
 ## Container installation
 
  1. Clone this repository
- 2. Build and push linker image
+ 2. Build and push Redis image
 
 ```bash
 make all && make prod
